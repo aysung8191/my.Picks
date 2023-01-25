@@ -4,7 +4,7 @@ const passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
+  res.render('home', { title: 'Upcoming Matches' });
 });
 
 // Google OAuth login route
@@ -23,15 +23,15 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    // successRedirect: will redirect to home page (like '/movies'),
-    // failureRedirect: will redirect to home page (like '/movies')
+    successRedirect: '/matches',
+    failureRedirect: '/matches'
   }
 ))
 
 // Google OAuth logout route
 router.get('/logout', function(req, res) {
   req.logout(function () {
-    // res.redirect(will redirect to home page (like '/movies'));
+    res.redirect('/matches');
   });
 });
 

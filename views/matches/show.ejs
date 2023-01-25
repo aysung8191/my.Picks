@@ -1,0 +1,61 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+    <div>Matchup: </div>
+    <div><%= match.matchup %></div>
+    <div>Date: </div>
+    <div><%= match.date %></div>
+    <div>Current Line: </div>
+    <div><%= match.currentLine %></div>
+    <div>Opening Line: </div>
+    <div><%= match.openingLine %></div>
+    <div>Over/Under: </div>
+    <div><%= match.overUnder %></div>
+    <div>ATS Trends(season): </div>
+    <div><%= match.atsTrends %></div>
+    <div>Over/Under Trends(season): </div>
+    <div><%= match.overUnderTrends %></div>
+    <div>Projected Weather: </div>
+    <div><%= match.projectedWeather %></div>
+    <div>Injured Players: </div>
+    <div><%= match.injuredPlayers %></div>
+
+    <br><br>
+    <% if (match.comments.length) { %>
+        <table>
+          <thead>
+            <tr>
+              <th>Comments</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% match.comments.forEach(function(c) { %>
+              <tr>
+                <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
+                <td><%= c.content %></td>
+                <td>
+                  <% if (user?._id.equals(c.user)) { %>
+                      <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                        <button type="submit">X</button>
+                      </form>
+                  <% } %>
+                </td>
+              </tr>
+            <% }); %>
+          </tbody>
+        </table>
+      <% } else { %>
+        <h5>No Comments Yet</h5>
+      <% } %>
+    
+<% if (user) { %>
+    <br><br><h2>Add a Comment</h2>
+<form id="add-comment-form" method="POST"
+  action="/matches/<%= match._id %>/comments">
+  <label>Comment:</label>
+  <textarea name="content"></textarea>
+  <input type="submit" value="Submit">
+</form>
+<% } %>
+
+<%- include('../partials/footer') %>

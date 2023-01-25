@@ -1,0 +1,29 @@
+<%- include('./partials/header') %>
+
+<h1>Upcoming Matches</h1>
+<table id="list">
+  <thead>
+    <tr>
+      <th>Matchup</th>
+      <th>Date</th>
+      <th>Current<br>Line</th>
+      <th>Over/Under</th>
+      <th>See<br>Matchup<br>Details</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% matches.forEach(function(m) { %>
+      <tr>
+        <td><%= m.matchup %></td>
+        <td><%= m.date %></td>
+        <td><%= m.currentLine %></td>
+        <td><%= m.overUnder %></td>
+        <td><a href="/matches/<%= m._id %>">DETAILS</a></td>
+      </tr>
+      <% }); %>
+    </tbody>
+  </table>
+<br><br>
+  <a href="/matches/new">Add Match</a>
+<%- include('./partials/footer') %>

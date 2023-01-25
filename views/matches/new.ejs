@@ -1,0 +1,35 @@
+<%- include('../partials/header') %>
+
+<h2>Enter a New Match</h2>
+<form action="/matches" method="POST">
+  <label>Matchup:
+    <input type="text" name="matchup">
+  </label><br>
+  <label>Date:
+    <input type="datetime-local" name="date">
+  </label><br>
+  <label>Projected Weather:
+    <input type="text" name="projectedWeather">
+  </label><br>
+  <label>Opening Line:
+    <input type="text" name="openingLine">
+  </label><br>
+  <label>Current Line:
+    <input type="text" name="currentLine">
+  </label><br>
+  <label>Over/Under:
+    <input type="text" name="overUnder">
+  </label><br>
+  <label>ATS Trends(season):
+    <input type="text" name="atsTrends">
+  </label><br>
+  <label>Over/Under Trends(season):
+    <input type="text" name="overUnderTrends">
+  </label><br>
+  <label>Injured Players:
+    <input type="text" name="injuredPlayers">
+  </label><br>
+  <button type="submit">Add Match</button>
+</form>
+
+<%- include('../partials/footer') %>
