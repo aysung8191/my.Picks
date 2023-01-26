@@ -1,61 +1,71 @@
 <%- include('../partials/header') %>
 
-<section id="show-page">
-    <div>Matchup: </div>
-    <div><%= match.matchup %></div>
-    <div>Date: </div>
-    <div><%= match.date %></div>
-    <div>Current Line: </div>
-    <div><%= match.currentLine %></div>
-    <div>Opening Line: </div>
-    <div><%= match.openingLine %></div>
-    <div>Over/Under: </div>
-    <div><%= match.overUnder %></div>
-    <div>ATS Trends(season): </div>
-    <div><%= match.atsTrends %></div>
-    <div>Over/Under Trends(season): </div>
-    <div><%= match.overUnderTrends %></div>
-    <div>Projected Weather: </div>
-    <div><%= match.projectedWeather %></div>
-    <div>Injured Players: </div>
-    <div><%= match.injuredPlayers %></div>
+<div id="container">
+    <div id="header">
+        <h1>Website Title</h1>
+    </div>
+    <div id="content">
+        <div id="nav">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a class="selected" href="/matches" <%- title === 'All Matches' ? 'class="active"' : '' %>>Home</a></li>
+                <% if (user) { %>
+                    <li><a href="/logout">LOG OUT</a></li>
+                <% } else { %>
+                    <li><a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a></li>
+                <% } %>
+            </ul>
+        </div>
+        <div id="main">
+            <section id="show-page">
+            <div><strong>Matchup:</strong> <%= match.matchup %></div>
+            <div><strong>Date:</strong> <%= match.date %></div>
+            <div><strong>Current Line:</strong> <%= match.currentLine %></div>
+            <div><strong>Opening Line:</strong> <%= match.openingLine %></div>
+            <div><strong>Over/Under:</strong> <%= match.overUnder %></div>
+            <div><strong>ATS Trends(season):</strong> <%= match.atsTrends %></div>
+            <div><strong>Over/Under Trends(season):</strong> <%= match.overUnderTrends %></div>
+            <div><strong>Projected Weather:</strong> <%= match.projectedWeather %></div>
+            <div><strong>Injured Players:</strong> <%= match.injuredPlayers %></div>
+            <br><br>
+            <% if (match.comments.length) { %>
+            <table>
+            <thead>
+                <tr>
+                <th>Comments</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% match.comments.forEach(function(c) { %>
+                <tr>
+                    <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><strong><%= c.userName %></strong></td>
+                    <td><%= c.content %></td>
+                    <td>
+                    <% if (user?._id.equals(c.user)) { %>
+                        <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                            <button type="submit">X</button>
+                        </form>
+                    <% } %>
+                    </td>
+                </tr>
+                <% }); %>
+            </tbody>
+            </table>
+            <% } else { %>
+            <h5>No Comments Yet</h5>
+            <% } %>
 
-    <br><br>
-    <% if (match.comments.length) { %>
-        <table>
-          <thead>
-            <tr>
-              <th>Comments</th>
-            </tr>
-          </thead>
-          <tbody>
-            <% match.comments.forEach(function(c) { %>
-              <tr>
-                <td class="comment-user"><img alt="avatar" src="<%= c.userAvatar %>" referrerpolicy="no-referrer" ><%= c.userName %></td>
-                <td><%= c.content %></td>
-                <td>
-                  <% if (user?._id.equals(c.user)) { %>
-                      <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                        <button type="submit">X</button>
-                      </form>
-                  <% } %>
-                </td>
-              </tr>
-            <% }); %>
-          </tbody>
-        </table>
-      <% } else { %>
-        <h5>No Comments Yet</h5>
-      <% } %>
-    
-<% if (user) { %>
-    <br><br><h2>Add a Comment</h2>
-<form id="add-comment-form" method="POST"
-  action="/matches/<%= match._id %>/comments">
-  <label>Comment:</label>
-  <textarea name="content"></textarea>
-  <input type="submit" value="Submit">
-</form>
-<% } %>
+            <% if (user) { %>
+            <br><br>
+            <h2>Add a Comment</h2>
+            <form id="add-comment-form" method="POST" action="/matches/<%= match._id %>/comments">
+                <label>Comment:</label>
+                <textarea name="content"></textarea>
+                <input type="submit" value="Submit">
+            </form>
+            <% } %>
+        </div>
+    </div>
+</div>
 
 <%- include('../partials/footer') %>

@@ -1,35 +1,194 @@
 <%- include('../partials/header') %>
 
-<h2>Enter a New Match</h2>
-<form action="/matches" method="POST">
-  <label>Matchup:
-    <input type="text" name="matchup">
-  </label><br>
-  <label>Date:
-    <input type="datetime-local" name="date">
-  </label><br>
-  <label>Projected Weather:
-    <input type="text" name="projectedWeather">
-  </label><br>
-  <label>Opening Line:
-    <input type="text" name="openingLine">
-  </label><br>
-  <label>Current Line:
-    <input type="text" name="currentLine">
-  </label><br>
-  <label>Over/Under:
-    <input type="text" name="overUnder">
-  </label><br>
-  <label>ATS Trends(season):
-    <input type="text" name="atsTrends">
-  </label><br>
-  <label>Over/Under Trends(season):
-    <input type="text" name="overUnderTrends">
-  </label><br>
-  <label>Injured Players:
-    <input type="text" name="injuredPlayers">
-  </label><br>
-  <button type="submit">Add Match</button>
-</form>
+<div id="container">
+    <div id="header">
+        <h1>Website Title</h1>
+    </div>
+    <div id="content">
+        <div id="nav">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a class="selected" href="/matches" <%- title === 'All Matches' ? 'class="active"' : '' %>>Home</a></li>
+                <% if (user) { %>
+                    <li><a href="/logout">LOG OUT</a></li>
+                <% } else { %>
+                    <li><a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a></li>
+                <% } %>
+            </ul>
+        </div>
+        <div id="main">
+            <h2>Enter a New Match</h2>
+            <br><br>
+            <form action="/matches" method="POST">
+                <label>Matchup:
+                    <input type="text" name="matchup">
+                </label><br>
+                <label>Sport:
+                <select name="sport">
+                    <option value="Football">Football</option>
+                    <option value="Basketball">Basketball</option>
+                </select>
+                </label><br>
+                <label>Away Team:
+                    <select name="awayTeam">
+                        <option value="BOS">BOS</option>
+                        <option value="BKN">BKN</option>
+                        <option value="NYK">NYK</option>
+                        <option value="PHI">PHI</option>
+                        <option value="TOR">TOR</option>
+                        <option value="CHI">CHI</option>
+                        <option value="CLE">CLE</option>
+                        <option value="DET">DET</option>
+                        <option value="IND">IND</option>
+                        <option value="MIL">MIL</option>
+                        <option value="DEN">DEN</option>
+                        <option value="MIN">MIN</option>
+                        <option value="OKC">OKC</option>
+                        <option value="POR">POR</option>
+                        <option value="UTA">UTA</option>
+                        <option value="GSW">GSW</option>
+                        <option value="LAC">LAC</option>
+                        <option value="LAL">LAL</option>
+                        <option value="PHX">PHX</option>
+                        <option value="SAC">SAC</option>
+                        <option value="ATL">ATL</option>
+                        <option value="CHA">CHA</option>
+                        <option value="MIA">MIA</option>
+                        <option value="ORL">ORL</option>
+                        <option value="WAS">WAS</option>
+                        <option value="DAL">DAL</option>
+                        <option value="HOU">HOU</option>
+                        <option value="MEM">MEM</option>
+                        <option value="NOP">NOP</option>
+                        <option value="SAS">SAS</option>
+                        <option value="AZ">AZ</option>
+                        <option value="ATL">ATL</option>
+                        <option value="CAR">CAR</option>
+                        <option value="CHI">CHI</option>
+                        <option value="DAL">DAL</option>
+                        <option value="DET">DET</option>
+                        <option value="GB">GB</option>
+                        <option value="LAR">LAR</option>
+                        <option value="MIN">MIN</option>
+                        <option value="NOS">NOS</option>
+                        <option value="NYG">NYG</option>
+                        <option value="PHI">PHI</option>
+                        <option value="SF">SF</option>
+                        <option value="SEA">SEA</option>
+                        <option value="TB">TB</option>
+                        <option value="WAS">WAS</option>
+                        <option value="BAL">BAL</option>
+                        <option value="BUF">BUF</option>
+                        <option value="CIN">CIN</option>
+                        <option value="CLE">CLE</option>
+                        <option value="DEN">DEN</option>
+                        <option value="HOU">HOU</option>
+                        <option value="IND">IND</option>
+                        <option value="JAX">JAX</option>
+                        <option value="KC">KC</option>
+                        <option value="LVR">LVR</option>
+                        <option value="LAC">LAC</option>
+                        <option value="MIA">MIA</option>
+                        <option value="NE">NE</option>
+                        <option value="NYJ">NYJ</option>
+                        <option value="PIT">PIT</option>
+                        <option value="TEN">TEN</option>
+                    </select>
+                </label><br>
+                <label>Home Team:
+                    <select name="homeTeam">
+                        <option value="BOS">BOS</option>
+                        <option value="BKN">BKN</option>
+                        <option value="NYK">NYK</option>
+                        <option value="PHI">PHI</option>
+                        <option value="TOR">TOR</option>
+                        <option value="CHI">CHI</option>
+                        <option value="CLE">CLE</option>
+                        <option value="DET">DET</option>
+                        <option value="IND">IND</option>
+                        <option value="MIL">MIL</option>
+                        <option value="DEN">DEN</option>
+                        <option value="MIN">MIN</option>
+                        <option value="OKC">OKC</option>
+                        <option value="POR">POR</option>
+                        <option value="UTA">UTA</option>
+                        <option value="GSW">GSW</option>
+                        <option value="LAC">LAC</option>
+                        <option value="LAL">LAL</option>
+                        <option value="PHX">PHX</option>
+                        <option value="SAC">SAC</option>
+                        <option value="ATL">ATL</option>
+                        <option value="CHA">CHA</option>
+                        <option value="MIA">MIA</option>
+                        <option value="ORL">ORL</option>
+                        <option value="WAS">WAS</option>
+                        <option value="DAL">DAL</option>
+                        <option value="HOU">HOU</option>
+                        <option value="MEM">MEM</option>
+                        <option value="NOP">NOP</option>
+                        <option value="SAS">SAS</option>
+                        <option value="AZ">AZ</option>
+                        <option value="ATL">ATL</option>
+                        <option value="CAR">CAR</option>
+                        <option value="CHI">CHI</option>
+                        <option value="DAL">DAL</option>
+                        <option value="DET">DET</option>
+                        <option value="GB">GB</option>
+                        <option value="LAR">LAR</option>
+                        <option value="MIN">MIN</option>
+                        <option value="NOS">NOS</option>
+                        <option value="NYG">NYG</option>
+                        <option value="PHI">PHI</option>
+                        <option value="SF">SF</option>
+                        <option value="SEA">SEA</option>
+                        <option value="TB">TB</option>
+                        <option value="WAS">WAS</option>
+                        <option value="BAL">BAL</option>
+                        <option value="BUF">BUF</option>
+                        <option value="CIN">CIN</option>
+                        <option value="CLE">CLE</option>
+                        <option value="DEN">DEN</option>
+                        <option value="HOU">HOU</option>
+                        <option value="IND">IND</option>
+                        <option value="JAX">JAX</option>
+                        <option value="KC">KC</option>
+                        <option value="LVR">LVR</option>
+                        <option value="LAC">LAC</option>
+                        <option value="MIA">MIA</option>
+                        <option value="NE">NE</option>
+                        <option value="NYJ">NYJ</option>
+                        <option value="PIT">PIT</option>
+                        <option value="TEN">TEN</option>
+                    </select>
+                </label><br>
+                <label>Date:
+                    <input type="datetime-local" name="date">
+                </label><br>
+                <label>Projected Weather:
+                    <input type="text" name="projectedWeather">
+                </label><br>
+                <label>Opening Line:
+                    <input type="text" name="openingLine">
+                </label><br>
+                <label>Current Line:
+                    <input type="text" name="currentLine">
+                </label><br>
+                <label>Over/Under:
+                    <input type="text" name="overUnder">
+                </label><br>
+                <label>ATS Trends(season):
+                    <input type="text" name="atsTrends">
+                </label><br>
+                <label>Over/Under Trends(season):
+                    <input type="text" name="overUnderTrends">
+                </label><br>
+                <label>Injured Players:
+                    <input type="text" name="injuredPlayers">
+                </label><br>
+                <button type="submit">Add Match</button>
+            </form>
+        </div>
+    </div>
+</div>
 
 <%- include('../partials/footer') %>

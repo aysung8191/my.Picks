@@ -1,10 +1,39 @@
 body {
-  padding: 50px;
+  background-color: #EEE;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  text-decoration: none;
+  color: red;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+.comment-user {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.comment-user img {
+  border-radius: 50%;
+  height: 40px;
+}
+
+.delete-form {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.delete-form button {
+  color: red;
 }
 
 .login {
@@ -16,19 +45,6 @@ a {
 
 .login img {
   height: 30px;
-}
-
-.delete-form {
-  display: inline-block;
-  margin-right: 10px;
-}
-	
-.delete-form button {
-  color: red;
-}
-	
-li {
-  list-style: none;
 }
 
 #add-comment-form {
@@ -43,13 +59,48 @@ li {
   margin-bottom: 2rem;
 }
 
-.comment-user {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+#container {
+  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.comment-user img {
-  border-radius: 50%;
-  height: 40px;
+#content {
+  padding: 10px;
 }
+
+#footer {
+  clear: both;
+  padding: 10px;
+  background-color: #999999;
+  color: white;
+  text-align: right;;
+}
+
+#header {
+  background-color: #66CCFF;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+#nav {
+  width: 180px;
+  float: left;
+} 
+
+#nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+#nav .selected {
+  font-weight: bold;
+}
+
+#main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+

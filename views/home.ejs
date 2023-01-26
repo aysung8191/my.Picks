@@ -1,29 +1,54 @@
 <%- include('./partials/header') %>
 
-<h1>Upcoming Matches</h1>
-<table id="list">
-  <thead>
-    <tr>
-      <th>Matchup</th>
-      <th>Date</th>
-      <th>Current<br>Line</th>
-      <th>Over/Under</th>
-      <th>See<br>Matchup<br>Details</th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
-    <% matches.forEach(function(m) { %>
-      <tr>
-        <td><%= m.matchup %></td>
-        <td><%= m.date %></td>
-        <td><%= m.currentLine %></td>
-        <td><%= m.overUnder %></td>
-        <td><a href="/matches/<%= m._id %>">DETAILS</a></td>
-      </tr>
-      <% }); %>
-    </tbody>
-  </table>
-<br><br>
-  <a href="/matches/new">Add Match</a>
+<div id="container">
+    <div id="header">
+        <h1>Website Title</h1>
+    </div>
+    <div id="content">
+        <div id="nav">
+            <h3>Navigation</h3>
+            <ul>
+                <li><a class="selected" href="/matches" <%- title === 'All Matches' ? 'class="active"' : '' %>>Home</a></li>
+                <% if (user) { %>
+                <li><a href="/logout">LOG OUT</a></li>
+                <% } else { %>
+                <li><a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a></li>
+                <% } %>
+            </ul>
+        </div>
+        <div id="main">
+            <h2>Upcoming Matches</h2>
+            <table id="list">
+                <thead>
+                    <tr>
+                        <th>Sport</th>
+                        <th>Matchup</th>
+                        <th>Date</th>
+                        <th>Current<br>Line</th>
+                        <th>Over/Under</th>
+                        <th>See<br>Matchup Details</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% matches.forEach(function(m) { %>
+                    <tr>
+                        <td><%= m.sport %></td>
+                        <td><%= m.matchup %></td>
+                        <td><%= m.date %></td>
+                        <td><%= m.currentLine %></td>
+                        <td><%= m.overUnder %></td>
+                        <td><a href="/matches/<%= m._id %>">DETAILS</a></td>
+                    </tr>
+                    <% }); %>
+                </tbody>
+            </table>
+            <br><br>
+            <% if (user?._id.equals('63d024c6a76a1bcd7744620b')) { %>
+            <a href="/matches/new">Add Match</a>
+            <% } %>
+        </div>
+    </div>
+</div>
+
 <%- include('./partials/footer') %>
