@@ -10,9 +10,9 @@
             <ul>
                 <li><a class="selected" href="/matches" <%- title === 'All Matches' ? 'class="active"' : '' %>>Home</a></li>
                 <% if (user) { %>
-                <li><a href="/logout">LOG OUT</a></li>
+                <li><a class="selected" href="/logout">Log Out</a></li>
                 <% } else { %>
-                <li><a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a></li>
+                <li><a class="selected" href="/auth/google">Log In&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a></li>
                 <% } %>
             </ul>
         </div>

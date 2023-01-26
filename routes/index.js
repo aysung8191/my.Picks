@@ -4,7 +4,7 @@ const passport = require('passport');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('home', { title: 'Upcoming Matches' });
+  res.redirect('/matches');
 });
 
 // Google OAuth login route

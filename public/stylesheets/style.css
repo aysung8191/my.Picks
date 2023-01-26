@@ -43,8 +43,8 @@ li {
   height: 34px;
 }
 
-.login img {
-  height: 30px;
+.selected img {
+  height: 15px;
 }
 
 #add-comment-form {
