@@ -1,4 +1,5 @@
 SEIR 1212 - Project 2 - my.Picks
+Augustine Sung
 
 # my.Picks
 my.Picks is a sports-gambling tips/advice site where users can come to look up game and player stats that are all aggregated in one place, while discussing and compaing their picks with outhers in the community!
@@ -19,9 +20,5 @@ Chat with fellow users in the community!
 * Sort/Filter ability on Home Page - allow users to sort matches by 'Sport', 'Team', or 'Date'.
 * Implement and utilize API - have stats updating live and have the "injured players" section route to rotowire articles.
 * Styling
-
-
-
-Augustine Sung
 
 
