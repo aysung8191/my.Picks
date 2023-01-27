@@ -12,5 +12,8 @@ Similar to reddit, my.Picks is a community where fellow sports-gambling enthusia
 
 ![image](https://user-images.githubusercontent.com/119904805/215062578-5024f8ae-4020-4988-ac61-73eedf7bfd3d.png)
 
+Chat with fellow users in the community!
+
+![image](https://user-images.githubusercontent.com/119904805/215062864-9a86aadf-d889-444b-8453-e4b79f7244c7.png)
 
 
