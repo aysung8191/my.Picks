@@ -16,6 +16,7 @@ Chat with fellow users in the community!
 
 ## Next Steps: 
 * "Favorite Teams" page - allow users to pre-select their favorite teams so that they can view a page of only the teams they choose to follow, rather than seeing the full schedule of upcoming games.
+* Community poll - allow users to make their picks on specific matches and see what side the community is leaning towards.
 * Sort/Filter ability on Home Page - allow users to sort matches by 'Sport', 'Team', or 'Date'.
 * Implement and utilize API - have stats updating live and have the "injured players" section route to rotowire articles.
 * Styling
