@@ -2,17 +2,16 @@
 
 <div id="container">
     <div id="header">
-        <h1>Website Title</h1>
+        <img id="logo" src="../images/p2logo.jpg" alt="logo">
     </div>
     <div id="content">
         <div id="nav">
-            <h3>Navigation</h3>
             <ul>
                 <li><a class="selected" href="/matches" <%- title === 'All Matches' ? 'class="active"' : '' %>>Home</a></li>
                 <% if (user) { %>
-                    <li><a href="/logout">LOG OUT</a></li>
+                <li><a class="selected" href="/logout">Log Out</a></li>
                 <% } else { %>
-                    <li><a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a></li>
+                <li><a class="selected" href="/auth/google">Log In&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a></li>
                 <% } %>
             </ul>
         </div>
@@ -54,16 +53,18 @@
             <% } else { %>
             <h5>No Comments Yet</h5>
             <% } %>
-
             <% if (user) { %>
             <br><br>
-            <h2>Add a Comment</h2>
+            <div id="comment-section">
+            <h2>Add a Comment</h2><br>
             <form id="add-comment-form" method="POST" action="/matches/<%= match._id %>/comments">
                 <label>Comment:</label>
                 <textarea name="content"></textarea>
                 <input type="submit" value="Submit">
             </form>
             <% } %>
+            </div>
+            </section>
         </div>
     </div>
 </div>

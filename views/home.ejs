@@ -2,13 +2,15 @@
 
 <div id="container">
     <div id="header">
-        <h1>Website Title</h1>
+        <img id="logo" src="images/p2logo.jpg" alt="logo">
     </div>
     <div id="content">
         <div id="nav">
-            <h3>Navigation</h3>
             <ul>
                 <li><a class="selected" href="/matches" <%- title === 'All Matches' ? 'class="active"' : '' %>>Home</a></li>
+                <% if (user?._id.equals(ADMINUSERID)) { %>
+                <a class="selected" href="/matches/new">Add Match</a>
+                <% } %>
                 <% if (user) { %>
                 <li><a class="selected" href="/logout">Log Out</a></li>
                 <% } else { %>
@@ -35,18 +37,14 @@
                     <tr>
                         <td><%= m.sport %></td>
                         <td><%= m.matchup %></td>
-                        <td><%= m.date %></td>
+                        <td><%= m.date.toLocaleDateString() + " " + m.formattedDate%></td>
                         <td><%= m.currentLine %></td>
                         <td><%= m.overUnder %></td>
-                        <td><a href="/matches/<%= m._id %>">DETAILS</a></td>
+                        <td><a id="details-button"href="/matches/<%= m._id %>"><strong>Details</strong></a></td>
                     </tr>
                     <% }); %>
                 </tbody>
             </table>
-            <br><br>
-            <% if (user?._id.equals('63d024c6a76a1bcd7744620b')) { %>
-            <a href="/matches/new">Add Match</a>
-            <% } %>
         </div>
     </div>
 </div>

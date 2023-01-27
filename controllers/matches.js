@@ -1,4 +1,5 @@
 const Match = require('../models/match')
+const ADMINUSERID = '63d024c6a76a1bcd7744620b';
 
 module.exports = {
     index,
@@ -9,7 +10,17 @@ module.exports = {
 
 function index(req, res) {
   Match.find({}, function(err, matches) {
-    res.render('home', {title: 'Upcoming Matches', matches});
+    matches.forEach(m => {
+      let dateString = m.date
+      let date = new Date(dateString)
+      let hour = date.getHours()
+      let minutes = (date.getMinutes() == 0)?"00":date.getMinutes()
+      let am_pm = hour >= 12 ? "PM" : "AM";
+      hour = hour % 12;
+      hour = hour ? hour : 12; // the hour '0' should be '12'
+      m.formattedDate = hour + ":" + minutes + am_pm
+    })
+    res.render('home', {title: 'Upcoming Matches', matches, ADMINUSERID});
   });
 }
 

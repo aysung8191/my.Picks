@@ -26,17 +26,17 @@ const matchSchema = new Schema({
     },
     sport: {
         type: String,
-        enum: ['Footall', 'Basketball'],
+        enum: ['Football', 'Basketball'],
         required: true
     },
     homeTeam: {
         type: String,
-        enum: ['BOS', 'BKN', 'NYK', 'PHI', 'TOR', 'CHI', 'CLE', 'DET', 'IND', 'MIL', 'DEN', 'MIN', 'OKC', 'POR', 'UTA', 'GSW', 'LAC', 'LAL', 'PHX', 'SAC', 'ATL', 'CHA', 'MIA', 'ORL', 'WAS', 'DAL', 'HOU', 'MEM', 'NOP', 'SAS'],
+        enum: ['BOS', 'BKN', 'NYK', 'PHI', 'TOR', 'CHI', 'CLE', 'DET', 'IND', 'MIL', 'DEN', 'MIN', 'OKC', 'POR', 'UTA', 'GSW', 'LAC', 'LAL', 'PHO', 'SAC', 'ATL', 'CHA', 'MIA', 'ORL', 'WAS', 'DAL', 'HOU', 'MEM', 'NOP', 'SAS', 'AZ', 'ATL', 'CAR', 'CHI', 'DAL', 'DET', 'GB', 'LAR', 'MIN', 'NOS', 'NYG', 'PHI', 'SF', 'SEA', 'TB', 'WAS', 'BAL', 'BUF', 'CIN', 'CLE', 'DEN', 'HOU', 'IND', 'JAX', 'KC', 'LVR', 'LAC', 'MIA', 'NE', 'NYJ', 'PIT', 'TEN'],
         required: true
     },
     awayTeam: {
         type: String,
-        enum: ['BOS', 'BKN', 'NYK', 'PHI', 'TOR', 'CHI', 'CLE', 'DET', 'IND', 'MIL', 'DEN', 'MIN', 'OKC', 'POR', 'UTA', 'GSW', 'LAC', 'LAL', 'PHX', 'SAC', 'ATL', 'CHA', 'MIA', 'ORL', 'WAS', 'DAL', 'HOU', 'MEM', 'NOP', 'SAS'],
+        enum: ['BOS', 'BKN', 'NYK', 'PHI', 'TOR', 'CHI', 'CLE', 'DET', 'IND', 'MIL', 'DEN', 'MIN', 'OKC', 'POR', 'UTA', 'GSW', 'LAC', 'LAL', 'PHO', 'SAC', 'ATL', 'CHA', 'MIA', 'ORL', 'WAS', 'DAL', 'HOU', 'MEM', 'NOP', 'SAS', 'AZ', 'ATL', 'CAR', 'CHI', 'DAL', 'DET', 'GB', 'LAR', 'MIN', 'NOS', 'NYG', 'PHI', 'SF', 'SEA', 'TB', 'WAS', 'BAL', 'BUF', 'CIN', 'CLE', 'DEN', 'HOU', 'IND', 'JAX', 'KC', 'LVR', 'LAC', 'MIA', 'NE', 'NYJ', 'PIT', 'TEN'],
         required: true
     },
     date: {
