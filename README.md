@@ -16,4 +16,10 @@ Chat with fellow users in the community!
 
 ![image](https://user-images.githubusercontent.com/119904805/215062864-9a86aadf-d889-444b-8453-e4b79f7244c7.png)
 
+## Next Steps: 
+* "Favorite Teams" page - allow users to pre-select their favorite teams so that they can view a page of only the teams they choose to follow, rather than seeing the full schedule of upcoming games.
+* Sort/Filter ability on Home Page - allow users to sort matches by 'Sport', 'Team', or 'Date'.
+* Implement and utilize API - have stats updating live and have the "injured players" section route to rotowire articles.
+* Styling
+
 
