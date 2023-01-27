@@ -9,7 +9,10 @@
             <ul>
                 <li><a class="selected" href="/matches" <%- title === 'All Matches' ? 'class="active"' : '' %>>Home</a></li>
                 <% if (user) { %>
-                <li><a class="selected" href="/logout">Log Out</a></li>
+                    <li><a class="selected" href="https://www.fanduel.com/">Fanduel</a><img id="fanduel-icon" src="../images/fanduellogo.JPG"></li>
+                    <li><a class="selected" href="https://www.draftkings.com/">DraftKings</a><img id="dk-icon" src="../images/dklogo.JPG"></li>
+                    <br><br><br>
+                    <li><a class="selected" href="/logout">Log Out</a></li>
                 <% } else { %>
                 <li><a class="selected" href="/auth/google">Log In&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a></li>
                 <% } %>
@@ -28,7 +31,7 @@
             <div><strong>Injured Players:</strong> <%= match.injuredPlayers %></div>
             <br><br>
             <% if (match.comments.length) { %>
-            <table>
+            <table id="comment-table">
             <thead>
                 <tr>
                 <th>Comments</th>
