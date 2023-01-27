@@ -7,17 +7,17 @@
     <div id="content">
         <div id="nav">
             <ul>
-                <li><a class="selected" href="/matches" <%- title === 'All Matches' ? 'class="active"' : '' %>>Home</a></li>
+                <li><a class="selected" href="/matches" <%- title === 'All Matches' ? 'class="active"' : '' %>><strong>Home</strong></a></li>
                 <% if (user?._id.equals(ADMINUSERID)) { %>
-                <a class="selected" href="/matches/new">Add Match</a>
+                <a class="selected" href="/matches/new"><strong>Add Match</strong></a>
                 <% } %>
                 <% if (user) { %>
-                    <li><a class="selected" href="https://www.fanduel.com/">Fanduel</a><img id="fanduel-icon" src="../images/fanduellogo.JPG"></li>
-                    <li><a class="selected" href="https://www.draftkings.com/">DraftKings</a><img id="dk-icon" src="../images/dklogo.JPG"></li>
+                    <li><a class="selected" href="https://www.fanduel.com/"><strong>Fanduel</strong></a><img id="fanduel-icon" src="../images/fanduellogo.JPG"></li>
+                    <li><a class="selected" href="https://www.draftkings.com/"><strong>DraftKings</strong></a><img id="dk-icon" src="../images/dklogo.JPG"></li>
                     <br><br><br>
-                    <li><a class="selected" href="/logout">Log Out</a></li>
+                    <li><a class="selected" href="/logout"><strong>Log Out</strong></a></li>
                 <% } else { %>
-                <li><a class="selected" href="/auth/google">Log In&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a></li>
+                <li><a class="selected" href="/auth/google"><strong>Log In</strong>&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a></li>
                 <% } %>
             </ul>
         </div>
@@ -26,12 +26,12 @@
             <table id="list">
                 <thead>
                     <tr>
-                        <th>Sport</th>
-                        <th>Matchup</th>
-                        <th>Date</th>
-                        <th>Current<br>Line</th>
-                        <th>Over/Under</th>
-                        <th>See<br>Matchup Details</th>
+                        <th><em>Sport</em></th>
+                        <th><em>Matchup</em></th>
+                        <th><em>Date</em></th>
+                        <th><em>Current<br>Line</em></th>
+                        <th><em>Over/Under</em></th>
+                        <th><em>See<br>Matchup Details</em></th>
                         <th></th>
                     </tr>
                 </thead>
@@ -43,7 +43,7 @@
                         <td><%= m.date.toLocaleDateString() + " " + m.formattedDate%></td>
                         <td><%= m.currentLine %></td>
                         <td><%= m.overUnder %></td>
-                        <td><a id="details-button"href="/matches/<%= m._id %>"><strong>Details</strong></a></td>
+                        <td><a id="details-button" href="/matches/<%= m._id %>"><strong>Details</strong></a></td>
                     </tr>
                     <% }); %>
                 </tbody>

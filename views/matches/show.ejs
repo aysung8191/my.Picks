@@ -20,21 +20,21 @@
         </div>
         <div id="main">
             <section id="show-page">
-            <div><strong>Matchup:</strong> <%= match.matchup %></div>
-            <div><strong>Date:</strong> <%= match.date %></div>
-            <div><strong>Current Line:</strong> <%= match.currentLine %></div>
-            <div><strong>Opening Line:</strong> <%= match.openingLine %></div>
-            <div><strong>Over/Under:</strong> <%= match.overUnder %></div>
-            <div><strong>ATS Trends(season):</strong> <%= match.atsTrends %></div>
-            <div><strong>Over/Under Trends(season):</strong> <%= match.overUnderTrends %></div>
-            <div><strong>Projected Weather:</strong> <%= match.projectedWeather %></div>
-            <div><strong>Injured Players:</strong> <%= match.injuredPlayers %></div>
+            <h4><strong><em>Matchup:</em></strong> <%= match.matchup %></h4>
+            <div id="show-prop"><strong><em>Date:</em></strong> <%= match.date %></div>
+            <div id="show-prop"><strong><em>Current Line:</em></strong> <%= match.currentLine %></div>
+            <div id="show-prop"><strong><em>Opening Line:</em></strong> <%= match.openingLine %></div>
+            <div id="show-prop"><strong><em>Over/Under:</em></strong> <%= match.overUnder %></div>
+            <div id="show-prop"><strong><em>ATS Trends(season):</em></strong> <%= match.atsTrends %></div>
+            <div id="show-prop"><strong><em>Over/Under Trends(season):</em></strong> <%= match.overUnderTrends %></div>
+            <div id="show-prop"><strong><em>Projected Weather:</em></strong> <%= match.projectedWeather %></div>
+            <div id="show-prop"><strong><em>Injured Players:</em></strong> <%= match.injuredPlayers %></div>
             <br><br>
             <% if (match.comments.length) { %>
             <table id="comment-table">
             <thead>
                 <tr>
-                <th>Comments</th>
+                <th><em>Comments</em></th>
                 </tr>
             </thead>
             <tbody>
@@ -54,14 +54,14 @@
             </tbody>
             </table>
             <% } else { %>
-            <h5>No Comments Yet</h5>
+            <h5><em>No Comments Yet</em></h5>
             <% } %>
             <% if (user) { %>
             <br><br>
             <div id="comment-section">
             <h2>Add a Comment</h2><br>
             <form id="add-comment-form" method="POST" action="/matches/<%= match._id %>/comments">
-                <label>Comment:</label>
+                <label><em>Comment:</em></label>
                 <textarea name="content"></textarea>
                 <input type="submit" value="Submit">
             </form>

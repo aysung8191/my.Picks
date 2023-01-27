@@ -6,12 +6,27 @@ body {
 
 a {
   text-decoration: none;
-  color: #EF0000;
+  color:  #ff6666;
   -webkit-text-stroke: none;
+}
+
+a:hover {
+  color: #4976d0;
 }
 
 h1, h2, h3 {
   margin: 0;
+}
+
+h2 {
+  font-size: 40px;
+}
+
+h4 {
+  font-size: 35px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 li {
@@ -72,17 +87,17 @@ td {
   align-items: center;
 }
 
-/* #comment-table {
-  display: flex;
-  justify-content: center;
-} */
+#comment-table {
+  margin-left: 75px;
+  margin-right: 75px;
+}
 
 #container {
   background-color: white;
   margin-left: auto;
   margin-right: auto;
-  background-image: url("../images/background5.jpg");
-  background-repeat: no-repeat;
+  background-image: url("../images/background3.jpg");
+  /* background-repeat: no-repeat; */
   background-size: 100%;
   padding-bottom: 100px;
 }
@@ -92,16 +107,21 @@ td {
 }
 
 #details-button {
-  color: #EF0000;
+  color: white;
+  font-size: 25px;
+}
+
+#details-button:hover {
+  color: #4976d0;
 }
 
 #dk-icon {
-  height: 17px;
+  height: 19px;
   border-radius: 5px;
 }
 
 #fanduel-icon {
-  height: 16px;
+  height: 18px;
   border-radius: 5px;
 }
 
@@ -119,8 +139,12 @@ td {
   text-align: center;
 }
 
+#list {
+  font-size: 25px;
+}
+
 #logo {
-  width: 200px;
+  width: 215px;
 }
 
 #main {
@@ -130,11 +154,29 @@ td {
   justify-content: center;
   align-items: center;
   padding-bottom: 30px;
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  width: 75%;
+  overflow: hidden;
+}
+
+#main-show {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0,0,0,.5);
+  width: 75%;
+  overflow: hidden;
+  padding-bottom: 300px;
 }
 
 #nav {
   width: 180px;
   float: left;
+  font-size: 25px;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: bold;
 } 
 
 #nav ul {
@@ -149,5 +191,12 @@ td {
 #show-page {
   padding-top: 25px;
   padding-bottom: 50px;
+  font-size: 25px;
 }
+
+#show-prop {
+  margin-left: 75px;
+  margin-right: 75px;
+}
+
 
