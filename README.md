@@ -1,5 +1,4 @@
 SEIR 1212 - Project 2 - my.Picks
-Augustine Sung
 
 # my.Picks
 my.Picks is a sports-gambling tips/advice site where users can come to look up game and player stats that are all aggregated in one place, while discussing and compaing their picks with outhers in the community!
